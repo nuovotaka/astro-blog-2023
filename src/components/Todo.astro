@@ -1,0 +1,24 @@
+---
+const { type, content } = Astro.props;
+---
+
+{
+  type === "checked" ? (
+    <>
+      <input type="checkbox" readonly="readonly" disabled checked="checked" />
+      <s>{content}</s>
+    </>
+  ) : (
+    <>
+      <input type="checkbox" readonly="readonly" disabled />
+      <s>{content}</s>
+    </>
+  )
+}
+
+<style>
+  s {
+    color: #666;
+    text-decoration-line: line-through;
+  }
+</style>
